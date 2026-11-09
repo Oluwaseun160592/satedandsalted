@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sated & Salted | Gourmet Street Food & Comfort Bowls</title>
+  <meta name="description" content="Sated & Salted serves mouth-watering Jollof Spaghetti, Stir-fry, Yamarita, Crispy Sweet Potato, and Signature Spicy Gizdodo. Order online with swift delivery!">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span id="kitchenStatusIndicator" class="kitchen-status-pill"><span class="status-dot"></span> Kitchen Open & Cooking</span>
+    <span>📍 <strong>Kitchen:</strong> 78b, Green Street, Isolo Housing Estate, Lagos</span>
+    <span>🔥 Free Chilled Drink on orders above ₦15,000!</span>
+    <a href="#menu"><i class="fas fa-arrow-right"></i> Order Now</a>
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header id="header">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo-link">
+        <img src="SATED & SALTED.png" alt="Sated & Salted Logo" class="brand-logo-img">
+        <div class="brand-name-text">
+          <span class="brand-title">SATED & SALTED</span>
+          <span class="brand-subtitle">Gourmet Food Co.</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul id="navbar">
+          <li><a class="active" href="#hero">Home</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#specials">Combos & Deals</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact & FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Direct WhatsApp CTA -->
+        <a href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-header-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          <span>Order on WhatsApp</span>
+        </a>
+
+        <!-- Cart Button -->
+        <button class="btn-cart-toggle" aria-label="View Shopping Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span>Tray</span>
+          <span class="cart-count-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Hero Copy -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-fire"></i>
+            <span>Artisanal Street Food & Comfort Bowls</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Cravings Satisfied, <br>
+            <span class="gradient-text">Salted to Absolute Perfection.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            From smoky party Jollof Spaghetti and wok-tossed Stir-fries to crispy golden Yamarita and fiery Gizdodo. Handcrafted fresh daily, loaded with flavor, and delivered warm to your doorstep.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#menu" class="btn-primary">
+              <i class="fas fa-utensils"></i> Explore Our Menu
+            </a>
+            <a href="https://wa.me/2348164475960?text=Hi!%20I%20want%20to%20order%20food%20from%20Sated%20%26%20Salted" target="_blank" class="btn-secondary">
+              <i class="fab fa-whatsapp"></i> Quick WhatsApp Order
+            </a>
+          </div>
+
+          <!-- Trust & Service Metrics -->
+          <div class="hero-trust-metrics">
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fas fa-star"></i></div>
+              <div class="trust-text">
+                <h4>4.9 / 5.0 Rating</h4>
+                <p>500+ Happy Foodies</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fas fa-bolt"></i></div>
+              <div class="trust-text">
+                <h4>Swift Delivery</h4>
+                <p>30 - 45 Mins Fast Dispatch</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fas fa-leaf"></i></div>
+              <div class="trust-text">
+                <h4>100% Fresh Daily</h4>
+                <p>Cooked Fresh to Order</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual Showcase -->
+        <div class="hero-visual">
+          <div class="floating-pill floating-pill-1">
+            <i class="fas fa-medal"></i>
+            <span>#1 Gizdodo in Town</span>
+          </div>
+
+          <div class="hero-dish-card">
+            <div class="hero-dish-img-wrap">
+              <img src="gizdodo.jpg" alt="Signature Spicy Gizdodo">
+              <span class="hero-dish-badge">🔥 Chef's Signature</span>
+            </div>
+            <div class="hero-dish-info">
+              <div>
+                <h3>Signature Gizdodo</h3>
+                <p>Plantain & Gizzard in Fiery Pepper Sauce</p>
+              </div>
+              <div class="hero-dish-price-group">
+                <div class="hero-dish-price">₦3,800</div>
+              </div>
+            </div>
+            <button class="btn-primary" style="width: 100%; margin-top: 12px; padding: 10px;" onclick="addToCart('gizdodo')">
+              <i class="fas fa-plus"></i> Add to My Tray
+            </button>
+          </div>
+
+          <div class="floating-pill floating-pill-2">
+            <i class="fas fa-motorcycle"></i>
+            <span>Piping Hot Packaging</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features / Value Pillars Bar -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-pepper-hot"></i></div>
+          <div class="feature-info">
+            <h4>Signature Seasoning</h4>
+            <p>Secret family spices and authentic pepper sauces that hit every single flavor note.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-temperature-high"></i></div>
+          <div class="feature-info">
+            <h4>Sealed & Piping Hot</h4>
+            <p>Premium tamper-evident thermal food containers keeping meals oven-fresh on arrival.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-heart"></i></div>
+          <div class="feature-info">
+            <h4>Generous Portions</h4>
+            <p>Hearty bowls and sides made to keep you genuinely sated with zero compromises.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-boxes-packing"></i></div>
+          <div class="feature-info">
+            <h4>Party & Catering Trays</h4>
+            <p>Bulk platters available for birthdays, office meetings, and weekend hangouts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section -->
+  <section id="menu" class="section-p1">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag"><i class="fas fa-book-open"></i> Explore Our Kitchen</span>
+        <h2 class="section-heading">Our Mouth-Watering Menu</h2>
+        <p class="section-desc">Select your favorites, customize your spice level, and order straight to your doorstep.</p>
+      </div>
+
+      <!-- Search & Category Filters -->
+      <div class="menu-filter-wrapper">
+        <div class="menu-search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="menuSearchInput" placeholder="Search dishes (e.g. Jollof, Stir-fry, Yamarita, Gizdodo)...">
+        </div>
+
+        <div class="menu-categories">
+          <button class="cat-btn active" data-cat="all"><i class="fas fa-utensils"></i> All Items</button>
+          <button class="cat-btn" data-cat="spaghetti"><i class="fas fa-bowl-food"></i> Spaghetti Specials</button>
+          <button class="cat-btn" data-cat="fries"><i class="fas fa-cubes-stacked"></i> Crispy Roots & Fries</button>
+          <button class="cat-btn" data-cat="sides"><i class="fas fa-drumstick-bite"></i> Sides & Delicacies</button>
+          <button class="cat-btn" data-cat="drinks"><i class="fas fa-wine-glass"></i> Refreshments</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid Cards (Rendered dynamically by JavaScript with instant fallback) -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Combos & Specials Section -->
+  <section id="specials" class="section-p1">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag"><i class="fas fa-tag"></i> Value Bundles</span>
+        <h2 class="section-heading">Chef's Curated Combos</h2>
+        <p class="section-desc">Get the ultimate taste feast with our high-value combo boxes designed to save you money.</p>
+      </div>
+
+      <div class="specials-grid">
+        <!-- Combo 1 -->
+        <div class="special-card">
+          <span class="combo-ribbon">Save ₦1,000</span>
+          <h3>The Solo Feast Box</h3>
+          <p class="special-sub">The quintessential comfort food indulgence for one.</p>
+          <ul class="combo-items-list">
+            <li><i class="fas fa-check-circle"></i> 1x Smoky Party Jollof Spaghetti</li>
+            <li><i class="fas fa-check-circle"></i> 1x Portion of Signature Spicy Gizdodo</li>
+            <li><i class="fas fa-check-circle"></i> 1x Chilled House Zobo Elixir</li>
+            <li><i class="fas fa-check-circle"></i> Free Cutlery & Pepper Dip</li>
+          </ul>
+          <div class="combo-pricing">
+            <span class="combo-current-price">₦7,500</span>
+            <span class="combo-original-price">₦8,500</span>
+          </div>
+          <button class="btn-primary" onclick="addComboToCart('combo-solo', 'The Solo Feast Box', 7500, 'jollofspagh.jpg')">
+            <i class="fas fa-plus"></i> Add Combo to Tray
+          </button>
+        </div>
+
+        <!-- Combo 2 (Featured) -->
+        <div class="special-card featured-combo">
+          <span class="combo-ribbon">Most Popular 🔥</span>
+          <h3>The Crunch & Chew Box</h3>
+          <p class="special-sub">Crispy, sweet, and protein-packed satisfaction.</p>
+          <ul class="combo-items-list">
+            <li><i class="fas fa-check-circle"></i> 1x Golden Special Yamarita</li>
+            <li><i class="fas fa-check-circle"></i> 1x Crispy Sweet Potato Chips</li>
+            <li><i class="fas fa-check-circle"></i> 1x Flame-Grilled Peppered Chicken</li>
+            <li><i class="fas fa-check-circle"></i> Dual Dipping Sauces (Sweet & Spicy)</li>
+          </ul>
+          <div class="combo-pricing">
+            <span class="combo-current-price">₦6,200</span>
+            <span class="combo-original-price">₦6,800</span>
+          </div>
+          <button class="btn-primary" onclick="addComboToCart('combo-crunch', 'The Crunch & Chew Box', 6200, 'fried yam.jpg')">
+            <i class="fas fa-plus"></i> Add Combo to Tray
+          </button>
+        </div>
+
+        <!-- Combo 3 -->
+        <div class="special-card">
+          <span class="combo-ribbon">Save ₦2,000</span>
+          <h3>The Duo Spagh Deluxe</h3>
+          <p class="special-sub">Designed for dates, friends, and serious spaghetti lovers.</p>
+          <ul class="combo-items-list">
+            <li><i class="fas fa-check-circle"></i> 1x Sizzling Stir-fry Spaghetti</li>
+            <li><i class="fas fa-check-circle"></i> 1x Smoky Party Jollof Spaghetti</li>
+            <li><i class="fas fa-check-circle"></i> 2x Flame-Grilled Peppered Chicken</li>
+            <li><i class="fas fa-check-circle"></i> 2x Chilled House Zobo Elixirs</li>
+          </ul>
+          <div class="combo-pricing">
+            <span class="combo-current-price">₦13,500</span>
+            <span class="combo-original-price">₦15,500</span>
+          </div>
+          <button class="btn-primary" onclick="addComboToCart('combo-duo', 'The Duo Spagh Deluxe', 13500, 'stirfryspagh.jpg')">
+            <i class="fas fa-plus"></i> Add Combo to Tray
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="section-p1">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag"><i class="fas fa-lightbulb"></i> Seamless Ordering</span>
+        <h2 class="section-heading">How To Order in 3 Simple Steps</h2>
+        <p class="section-desc">Enjoy hot, restaurant-quality meals with effortless ordering straight from your phone.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <div class="step-icon-wrap"><i class="fas fa-hand-pointer"></i></div>
+          <h3>Select Your Cravings</h3>
+          <p>Browse our curated menu of pastas, yam specialties, and sides. Add dishes to your food tray with one click.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">02</span>
+          <div class="step-icon-wrap"><i class="fas fa-sliders"></i></div>
+          <h3>Personalize Spice & Address</h3>
+          <p>Choose your preferred heat level (Mild, Medium, or Fiery Hot), add delivery instructions, and enter your address.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <div class="step-icon-wrap"><i class="fab fa-whatsapp"></i></div>
+          <h3>1-Click WhatsApp Checkout</h3>
+          <p>Your itemized order opens instantly on WhatsApp. We confirm prep immediately and dispatch your food warm!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Sated & Salted Section -->
+  <section id="about" class="section-p1">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Collage of Real Dishes -->
+        <div class="about-images-collage">
+          <div class="about-img-box"><img src="jollofspagh.jpg" alt="Jollof Spagh Dish"></div>
+          <div class="about-img-box"><img src="stirfryspagh.jpg" alt="Stir-fry Spagh Dish"></div>
+          <div class="about-img-box"><img src="fried yam.jpg" alt="Yamarita Dish"></div>
+          <div class="about-img-box"><img src="Sweet Potato chips.jpg" alt="Sweet Potato Chips"></div>
+          
+          <div class="about-badge-card">
+            <h4>100% Passion</h4>
+            <p>No artificial shortcuts • Real West African spices</p>
+          </div>
+        </div>
+
+        <!-- Story & Values -->
+        <div class="about-content">
+          <div class="section-title-wrap">
+            <span class="section-tag"><i class="fas fa-heart"></i> Our Story</span>
+            <h2 class="section-heading">Why We Are Called <br><span class="gradient-text">SATED & SALTED</span></h2>
+          </div>
+
+          <p class="about-lead">
+            We believe that a truly unforgettable meal does two essential things: it leaves you completely <strong>Sated</strong> (deeply satisfied and nourished), and is seasoned and <strong>Salted</strong> to culinary perfection.
+          </p>
+
+          <p class="about-text">
+            Born out of a deep love for bold Nigerian street food and hearty comfort bowls, Sated & Salted bridges the gap between home-cooked warmth and restaurant precision. Whether you are craving the deep, smoky aromatics of party Jollof spaghetti, the crispy golden crunch of egg-battered Yamarita, or the spicy kick of tender Gizdodo, we prepare every bowl as if cooking for family.
+          </p>
+
+          <div class="about-values-list">
+            <div class="val-item"><i class="fas fa-check-circle"></i> Fresh ingredients daily</div>
+            <div class="val-item"><i class="fas fa-check-circle"></i> Clean, hygienic prep kitchen</div>
+            <div class="val-item"><i class="fas fa-check-circle"></i> Customizable spice levels</div>
+            <div class="val-item"><i class="fas fa-check-circle"></i> High-speed doorstep delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section id="reviews" class="section-p1">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag"><i class="fas fa-comment-dots"></i> Foodie Love</span>
+        <h2 class="section-heading">What Our Customers Are Saying</h2>
+        <p class="section-desc">See why hundreds of foodies keep coming back for their weekly cravings.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "The Stir-fry spaghetti was out of this world! Generous portion, bursting with flavor, and the pepper level was exactly what I asked for. Hands down the best food vendor in the area."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">TA</div>
+            <div class="author-info">
+              <h4>Tolu Adesanya</h4>
+              <p>Ordered Stir-fry Spagh • Victoria Island</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "Gizdodo from Sated & Salted is in a league of its own! Sweet ripe dodo, tender gizzard chunks, not soaked in excess oil at all. My office orders lunch from here almost every Friday."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">CO</div>
+            <div class="author-info">
+              <h4>Chidinma Okafor</h4>
+              <p>Ordered Signature Gizdodo • Lekki Phase 1</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "Their Yamarita is the crispiest I've had in Lagos. Fluffy inside and that dipping sauce is addictive. Delivered in 35 minutes and it was still steaming hot. 10/10!"
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">MB</div>
+            <div class="author-info">
+              <h4>Michael Balogun</h4>
+              <p>Ordered Yamarita & Zobo • Ikeja</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact, Hours & FAQ Section -->
+  <section id="contact" class="section-p1">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag"><i class="fas fa-map-marker-alt"></i> Get In Touch</span>
+        <h2 class="section-heading">Contact, Hours & FAQ</h2>
+        <p class="section-desc">Have questions about deliveries, bulk catering, or menu allergies? We are here to help!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact & Hours Details -->
+        <div class="contact-card-box">
+          <h3>Kitchen & Delivery Info</h3>
+          <div class="contact-details-list">
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+              <div class="contact-detail-text">
+                <h4>Kitchen Location</h4>
+                <p>78b, Green Street, Isolo Housing Estate, Lagos, Nigeria</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+              <div class="contact-detail-text">
+                <h4>Operating Hours</h4>
+                <p>Monday – Saturday: 10:00 AM – 9:00 PM<br>Sunday: Pre-ordered Bulk & Event Trays Only</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon"><i class="fas fa-motorcycle"></i></div>
+              <div class="contact-detail-text">
+                <h4>Delivery Zones</h4>
+                <p>Speedy door-to-door delivery across Isolo, Ikeja, Yaba, Surulere, Victoria Island, Lekki, and wider Lagos environs.</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="contact-detail-text">
+                <h4>WhatsApp Direct Orders</h4>
+                <p><a href="https://wa.me/2348164475960" target="_blank" style="color: var(--whatsapp); font-weight: 700;">+234 816 447 5960</a></p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-detail-text">
+                <h4>Email Inquiries</h4>
+                <p>orders@satedandsalted.com</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20want%20to%20order%20food." target="_blank" class="btn-primary" style="width: 100%; text-align: center;">
+            <i class="fab fa-whatsapp"></i> Chat & Order on WhatsApp (+234 816 447 5960)
+          </a>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-wrap">
+          <h3>Frequently Asked Questions</h3>
+
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>How long does delivery take?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Most meals are cooked fresh to order and dispatched within 20-30 minutes. Average delivery time to your doorstep is between 30 to 45 minutes depending on your location.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I choose my spice / pepper level?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, absolutely! When checking out in your food tray, you can select Mild, Medium, or Fiery Hot, and add any special notes like "less oil" or "extra dipping pepper".</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you cater for office lunches & private parties?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! We provide party platters, mini food boxes, and large catering trays for birthdays, office meetings, and weekend hangouts. Please contact us 24 hours in advance via WhatsApp for discounted bulk rates.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I make payment?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>When you click "Send Order to WhatsApp", your receipt is generated. Our kitchen immediately sends the business bank account for instant transfer verification, after which your order is dispatched.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo-link">
+            <img src="SATED & SALTED.png" alt="Sated & Salted Logo" class="brand-logo-img">
+            <div class="brand-name-text">
+              <span class="brand-title">SATED & SALTED</span>
+              <span class="brand-subtitle">Gourmet Food Co.</span>
+            </div>
+          </div>
+          <p>Satisfying your deepest food cravings with gourmet Nigerian street delicacies, seasoned and salted to perfection.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/2348164475960" target="_blank" class="social-icon-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#specials">Combo Deals</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Favorites</h4>
+          <ul class="footer-links">
+            <li><a href="#menu">Smoky Jollof Spaghetti</a></li>
+            <li><a href="#menu">Sizzling Stir-fry Spaghetti</a></li>
+            <li><a href="#menu">Crispy Yamarita</a></li>
+            <li><a href="#menu">Signature Gizdodo</a></li>
+            <li><a href="#menu">Sweet Potato Chips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Location & Orders</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px;">
+            <i class="fas fa-location-dot" style="color: var(--primary);"></i> <strong>Address:</strong><br>
+            78b, Green Street, Isolo Housing Estate, Lagos
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px;">
+            <i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i> <strong>Order Line:</strong><br>
+            <a href="https://wa.me/2348164475960" target="_blank" style="color: var(--whatsapp); font-weight: 700;">+234 816 447 5960</a>
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; margin-bottom: 10px;">
+            <strong>Hours:</strong> Mon – Sat: 10:00 AM – 9:00 PM
+          </p>
+          <div style="font-size: 0.85rem; color: var(--accent);">
+            <i class="fas fa-check-circle"></i> Accepting Online Orders Now
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sated & Salted. All Rights Reserved. Handcrafted with passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Food Tray Drawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fas fa-shopping-bag"></i> Your Food Tray</h3>
+      <button class="btn-close-cart" id="closeCartBtn" aria-label="Close Tray">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body">
+      <!-- Empty State -->
+      <div class="cart-empty-state" id="cartEmptyState">
+        <i class="fas fa-bowl-food"></i>
+        <h4>Your tray is currently empty!</h4>
+        <p>Explore our menu and add your favorite dishes to begin your order.</p>
+        <button class="btn-primary" style="margin-top: 18px;" onclick="closeCartDrawer(); window.location.href='#menu';">
+          <i class="fas fa-utensils"></i> Browse Menu
+        </button>
+      </div>
+
+      <!-- Item List Container -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Order Preferences & Contact Form -->
+      <div class="cart-checkout-form" id="cartCheckoutSection" style="display: none;">
+        <h4 style="font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 12px;">Order Preferences & Delivery</h4>
+
+        <div class="cart-form-group">
+          <label for="custName"><i class="fas fa-user"></i> Your Full Name *</label>
+          <input type="text" id="custName" placeholder="e.g. Kayode Adebayo" required>
+        </div>
+
+        <div class="cart-form-group">
+          <label for="custPhone"><i class="fas fa-phone"></i> Phone / WhatsApp Number *</label>
+          <input type="tel" id="custPhone" placeholder="e.g. 08012345678" required>
+        </div>
+
+        <div class="cart-form-group">
+          <label for="deliveryZoneSelect"><i class="fas fa-location-dot"></i> Delivery Area / Pickup *</label>
+          <select id="deliveryZoneSelect">
+            <option value="island-near">Lekki Phase 1 / Ikoyi / Victoria Island (+₦1,500)</option>
+            <option value="island-far">Chevron / Ajah / Sangotedo (+₦2,500)</option>
+            <option value="mainland-near">Yaba / Surulere / Ikeja (+₦2,000)</option>
+            <option value="mainland-far">Magodo / Festac / Ikorodu (+₦3,000)</option>
+            <option value="pickup">Self-Pickup at Kitchen (₦0 Free)</option>
+          </select>
+        </div>
+
+        <div class="cart-form-group">
+          <label for="custAddress"><i class="fas fa-map-marker-alt"></i> Street Address / Office Location</label>
+          <input type="text" id="custAddress" placeholder="e.g. Flat 4, 12 Admiralty Way, Lekki Phase 1">
+        </div>
+
+        <div class="cart-form-group">
+          <label for="spicePreference"><i class="fas fa-pepper-hot"></i> Preferred Spice Level</label>
+          <select id="spicePreference">
+            <option value="Hot & Spicy">Hot & Spicy (Vendor Specialty)</option>
+            <option value="Medium Heat">Medium Heat (Balanced & Savory)</option>
+            <option value="Mild">Mild (Gentle spice, child-friendly)</option>
+          </select>
+        </div>
+
+        <div class="cart-form-group">
+          <label for="orderNotes"><i class="fas fa-pencil"></i> Special Cooking Notes / Requests</label>
+          <textarea id="orderNotes" rows="2" placeholder="e.g. Less oil, extra dipping pepper, call when arriving..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer Footer / WhatsApp Order Button -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Items Subtotal:</span>
+        <span id="cartSubtotal" class="cart-total-badge">₦0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Estimated Delivery:</span>
+        <span id="cartDeliveryFee">₦1,500</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Grand Total:</span>
+        <span id="cartGrandTotal">₦0</span>
+      </div>
+
+      <button class="btn-whatsapp-order" onclick="submitOrderViaWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Send Order to WhatsApp
+      </button>
+
+      <button class="btn-clear-cart" onclick="clearCart()">Clear Tray</button>
+    </div>
+  </aside>
+
+  <!-- Mobile Bottom Quick Navigation Bar -->
+  <div class="mobile-bottom-bar">
+    <a href="#menu" class="btn-mobile-menu">
+      <i class="fas fa-utensils"></i> Menu
+    </a>
+    <button class="btn-mobile-cart" aria-label="Open Tray">
+      <i class="fas fa-shopping-bag"></i>
+      <span>Tray (<span class="cart-count-badge">0</span>)</span>
+    </button>
+  </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20would%20like%20to%20order%20food." target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp" title="Order via WhatsApp (+234 816 447 5960)">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Dish Customization Modal -->
+  <div class="dish-modal-overlay" id="dishModalOverlay">
+    <div class="dish-modal-card">
+      <div class="dish-modal-header">
+        <img id="modalDishImg" src="jollofspagh.jpg" alt="Dish preview">
+        <button class="dish-modal-close" id="closeDishModalBtn" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="dish-modal-body">
+        <h3 id="modalDishTitle">Smoky Party Jollof Spaghetti</h3>
+        <p class="dish-modal-desc" id="modalDishDesc">Rich tomato-pepper base simmered with aromatic herbs.</p>
+
+        <!-- Portion Choice -->
+        <div class="dish-modal-section-title">
+          <span>Choose Bowl Size</span>
+          <span style="font-size: 0.75rem; color: var(--text-dim);">Select 1</span>
+        </div>
+        <div class="portion-options">
+          <label class="portion-label">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="radio" name="modalPortion" id="portionRegular" checked>
+              <span class="portion-info">Standard Bowl</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Standard Price</span>
+          </label>
+          <label class="portion-label">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="radio" name="modalPortion" id="portionJumbo">
+              <span class="portion-info">Jumbo Feast Bowl (Extra Portion)</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">+₦1,500</span>
+          </label>
+        </div>
+
+        <!-- Add-on Extras -->
+        <div class="dish-modal-section-title">
+          <span>Add-on Extras</span>
+          <span style="font-size: 0.75rem; color: var(--text-dim);">Optional</span>
+        </div>
+        <div class="addons-list">
+          <label class="addon-label">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="checkbox" class="modal-addon-checkbox" data-name="Extra Fried Dodo" data-price="800">
+              <span class="addon-info">Extra Fried Sweet Plantain (Dodo)</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">+₦800</span>
+          </label>
+          <label class="addon-label">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="checkbox" class="modal-addon-checkbox" data-name="Hard Boiled Egg" data-price="300">
+              <span class="addon-info">Hard Boiled Egg</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">+₦300</span>
+          </label>
+          <label class="addon-label">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="checkbox" class="modal-addon-checkbox" data-name="Signature Extra Pepper Dip" data-price="400">
+              <span class="addon-info">Signature Extra Pepper Relish</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">+₦400</span>
+          </label>
+          <label class="addon-label">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="checkbox" class="modal-addon-checkbox" data-name="Shredded Peppered Chicken" data-price="1000">
+              <span class="addon-info">Shredded Peppered Chicken</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">+₦1,000</span>
+          </label>
+        </div>
+
+        <!-- Spice level for this customized item -->
+        <div class="dish-modal-section-title">
+          <span>Heat Level</span>
+        </div>
+        <div class="cart-form-group">
+          <select id="modalSpiceSelect" style="width: 100%; background: var(--bg-card); border: 1px solid var(--border-light); padding: 10px 14px; border-radius: var(--radius-sm); color: var(--text-main);">
+            <option value="Hot & Spicy">Hot & Spicy (Recommended 🔥)</option>
+            <option value="Medium Heat">Medium Heat</option>
+            <option value="Mild">Mild Heat</option>
+          </select>
+        </div>
+
+        <!-- Special instructions -->
+        <div class="dish-modal-section-title" style="margin-top: 14px;">
+          <span>Special Request</span>
+        </div>
+        <div class="cart-form-group">
+          <input type="text" id="modalItemNotes" placeholder="e.g. Less oil, extra fork..." style="width: 100%; background: var(--bg-card); border: 1px solid var(--border-light); padding: 10px 14px; border-radius: var(--radius-sm); color: var(--text-main);">
+        </div>
+      </div>
+
+      <div class="dish-modal-footer">
+        <div>
+          <span style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase;">Total</span>
+          <div class="modal-price-display" id="modalPriceDisplay">₦3,500</div>
+        </div>
+        <button class="btn-primary" onclick="confirmModalCustomization()">
+          <i class="fas fa-plus"></i> Add to Food Tray
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script src="app.js"></script>
+</body>
+
+</html>
