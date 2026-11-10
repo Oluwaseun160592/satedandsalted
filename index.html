@@ -221,7 +221,8 @@
       <div class="menu-filter-wrapper">
         <div class="menu-search-box">
           <i class="fas fa-search"></i>
-          <input type="text" id="menuSearchInput" placeholder="Search dishes (e.g. Jollof, Stir-fry, Yamarita, Gizdodo)...">
+          <input type="text" id="menuSearchInput" placeholder="Search dishes (e.g. Jollof, Stir-fry, Yamarita, Gizdodo)..." role="combobox" aria-controls="searchDropdown">
+          <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
         </div>
 
         <div class="menu-categories">
@@ -618,7 +619,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Sated & Salted. All Rights Reserved. Handcrafted with passion.</p>
+        <p>&copy; 2026 Sated & Salted. All Rights Reserved. Handcrafted with passion. &middot; <a href="admin.html" style="opacity:.7;text-decoration:underline;">Admin</a></p>
       </div>
     </div>
   </footer>
@@ -839,6 +840,7 @@
   </div>
 
   <!-- JavaScript Application Logic -->
+  <script src="menu-data.js"></script>
   <script src="app.js"></script>
 </body>
 

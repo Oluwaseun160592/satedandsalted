@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Portal | Sated & Salted</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card" autocomplete="off">
+      <img src="SATED & SALTED.png" alt="Sated & Salted" class="login-logo">
+      <h1>Admin Portal</h1>
+      <p>Sign in to manage your menu, prices and photos.</p>
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter admin password" required>
+      <div id="loginError" class="form-error" hidden>Incorrect password. Please try again.</div>
+      <button type="submit" class="btn btn-primary"><i class="fas fa-lock-open"></i> Sign In</button>
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to website</a>
+    </form>
+  </section>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" hidden>
+    <header class="admin-header">
+      <div class="admin-brand">
+        <img src="SATED & SALTED.png" alt="Sated & Salted">
+        <span>Admin Portal</span>
+      </div>
+      <div class="admin-header-actions">
+        <a href="index.html" target="_blank" class="btn btn-light"><i class="fas fa-up-right-from-square"></i> View Site</a>
+        <button id="logoutBtn" class="btn btn-dark"><i class="fas fa-right-from-bracket"></i> Log out</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card"><span id="statTotal">0</span><small>Menu items</small></div>
+        <div class="stat-card"><span id="statLive">0</span><small>Live on site</small></div>
+        <div class="stat-card"><span id="statHidden">0</span><small>Hidden</small></div>
+        <div class="stat-card"><span id="statAvg">₦0</span><small>Average price</small></div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <input type="search" id="adminSearch" placeholder="Search menu items...">
+          <select id="adminCategoryFilter">
+            <option value="all">All categories</option>
+            <option value="spaghetti">Spaghetti Specials</option>
+            <option value="fries">Crispy Roots &amp; Fries</option>
+            <option value="sides">Sides &amp; Delicacies</option>
+            <option value="drinks">Refreshments</option>
+          </select>
+        </div>
+        <div class="toolbar-right">
+          <button id="addItemBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Dish</button>
+        </div>
+      </div>
+
+      <!-- Items -->
+      <div id="itemsGrid" class="items-grid"></div>
+
+      <!-- Settings & data -->
+      <section class="panel">
+        <h2><i class="fas fa-gear"></i> Settings &amp; Backup</h2>
+        <div class="panel-grid">
+          <div class="panel-box">
+            <h3>Change admin password</h3>
+            <input type="password" id="newPassword" placeholder="New password (min 6 characters)">
+            <button id="savePasswordBtn" class="btn btn-dark">Update Password</button>
+          </div>
+          <div class="panel-box">
+            <h3>Backup &amp; restore menu</h3>
+            <p class="hint">Download your menu as a file, or restore it later / on another device.</p>
+            <div class="btn-row">
+              <button id="exportBtn" class="btn btn-light"><i class="fas fa-download"></i> Export</button>
+              <button id="importBtn" class="btn btn-light"><i class="fas fa-upload"></i> Import</button>
+              <input type="file" id="importFile" accept="application/json" hidden>
+            </div>
+          </div>
+          <div class="panel-box">
+            <h3>Reset menu</h3>
+            <p class="hint">Remove all your changes and restore the original sample menu.</p>
+            <button id="resetBtn" class="btn btn-danger"><i class="fas fa-rotate-left"></i> Reset to defaults</button>
+          </div>
+        </div>
+        <p class="notice"><i class="fas fa-circle-info"></i> Changes are saved in <strong>this browser</strong> and appear on the website opened in this same browser. Customers on other phones/computers will not see them yet &mdash; see the note from your developer about connecting an online database.</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- ADD / EDIT MODAL -->
+  <div id="itemModal" class="modal-overlay" hidden>
+    <form id="itemForm" class="modal-card">
+      <div class="modal-head">
+        <h2 id="modalTitle">Add New Dish</h2>
+        <button type="button" id="closeModalBtn" class="icon-btn" aria-label="Close"><i class="fas fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="itemId">
+
+        <div class="image-field">
+          <div class="image-preview" id="imagePreview"><i class="fas fa-image"></i><span>No photo yet</span></div>
+          <div class="image-actions">
+            <label class="btn btn-light" for="imageFile"><i class="fas fa-camera"></i> Upload photo</label>
+            <input type="file" id="imageFile" accept="image/*" hidden>
+            <button type="button" id="removeImageBtn" class="btn btn-ghost">Remove</button>
+            <small>JPG/PNG. Large photos are resized automatically.</small>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="itemName">Dish name *</label>
+            <input type="text" id="itemName" required maxlength="80" placeholder="e.g. Smoky Party Jollof Spaghetti">
+          </div>
+          <div class="field">
+            <label for="itemCategory">Category *</label>
+            <select id="itemCategory" required>
+              <option value="spaghetti">Spaghetti Specials</option>
+              <option value="fries">Crispy Roots &amp; Fries</option>
+              <option value="sides">Sides &amp; Delicacies</option>
+              <option value="drinks">Refreshments</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="itemPrice">Price (₦) *</label>
+            <input type="number" id="itemPrice" required min="0" step="50" placeholder="3500">
+          </div>
+          <div class="field full">
+            <label for="itemDesc">Description</label>
+            <textarea id="itemDesc" rows="3" maxlength="240" placeholder="Describe the dish in one or two sentences"></textarea>
+          </div>
+          <div class="field">
+            <label for="itemBadge">Badge label</label>
+            <input type="text" id="itemBadge" maxlength="30" placeholder="e.g. Bestseller 🔥">
+          </div>
+          <div class="field">
+            <label for="itemSpice">Spice / tag</label>
+            <input type="text" id="itemSpice" maxlength="24" placeholder="e.g. Fiery Hot">
+          </div>
+          <div class="field">
+            <label for="itemTime">Prep time</label>
+            <input type="text" id="itemTime" maxlength="20" placeholder="e.g. 20-30 mins">
+          </div>
+          <div class="field switch-field">
+            <label class="switch">
+              <input type="checkbox" id="itemAvailable" checked>
+              <span class="slider"></span>
+              <span class="switch-text">Show on website</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button type="button" id="cancelModalBtn" class="btn btn-ghost">Cancel</button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-floppy-disk"></i> Save Dish</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="adminToast" class="admin-toast" hidden></div>
+
+  <script src="menu-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

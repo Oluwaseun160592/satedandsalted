@@ -1,0 +1,107 @@
+/* Default menu. Changes made in the admin portal are stored in localStorage (key: ss_menu) and override this list. */
+window.SS_DEFAULT_MENU = [
+  {
+    id: "jollof-spagh",
+    name: "Smoky Party Jollof Spaghetti",
+    category: "spaghetti",
+    price: 3500,
+    img: "jollofspagh.jpg",
+    badge: "Chef's Pick 🔥",
+    spice: "Spicy",
+    rating: "4.9",
+    reviews: 184,
+    time: "25-35 mins",
+    desc: "Rich tomato-pepper base simmered with aromatic herbs, smoked spices, and slow-braised to party perfection."
+  },
+  {
+    id: "stirfry-spagh",
+    name: "Sizzling Stir-fry Spaghetti",
+    category: "spaghetti",
+    price: 4000,
+    img: "stirfryspagh.jpg",
+    badge: "Bestseller 🔥",
+    spice: "Medium Spice",
+    rating: "5.0",
+    reviews: 212,
+    time: "20-30 mins",
+    desc: "Wok-tossed spaghetti loaded with sweet bell peppers, sweetcorn, shredded chicken, and savory Asian-Nigerian spices."
+  },
+  {
+    id: "gizdodo",
+    name: "Signature Spicy Gizdodo",
+    category: "sides",
+    price: 3800,
+    img: "gizdodo.jpg",
+    badge: "Crowd Favorite 🌶️",
+    spice: "Fiery Hot",
+    rating: "5.0",
+    reviews: 305,
+    time: "15-25 mins",
+    desc: "Crispy fried sweet plantains and tender gizzard chunks drenched in rich caramelized habanero and pepper stew."
+  },
+  {
+    id: "yamarita",
+    name: "Special Yamarita Delight",
+    category: "fries",
+    price: 2800,
+    img: "fried yam.jpg",
+    badge: "Crispy Gold ✨",
+    spice: "Mild Dip",
+    rating: "4.8",
+    reviews: 95,
+    time: "20-25 mins",
+    desc: "Thick African yam wedges dipped in seasoned whisked egg batter, fried golden crisp, and served with spicy tomato relish."
+  },
+  {
+    id: "yam-fries",
+    name: "Classic Fried Yam Fries",
+    category: "fries",
+    price: 2200,
+    img: "Yam fries.jpg",
+    badge: "Street Classic",
+    spice: "Mild Dip",
+    rating: "4.8",
+    reviews: 110,
+    time: "15-20 mins",
+    desc: "Crisp exterior with a melt-in-your-mouth fluffy center, lightly salted and paired with our house fiery pepper sauce."
+  },
+  {
+    id: "potato-chips",
+    name: "Crispy Sweet Potato Chips",
+    category: "fries",
+    price: 2000,
+    img: "Sweet Potato chips.jpg",
+    badge: "Sweet & Crispy 🍠",
+    spice: "Mild Dip",
+    rating: "4.9",
+    reviews: 88,
+    time: "15-20 mins",
+    desc: "Thinly-sliced organic sweet potatoes fried till crunchy perfection, dusted with paprika sea salt, and served with dip."
+  },
+  {
+    id: "zobo-elixir",
+    name: "Chilled House Zobo Elixir",
+    category: "drinks",
+    price: 1200,
+    img: "SATED & SALTED.png",
+    badge: "Fresh Brew 🌺",
+    spice: "Refreshing",
+    rating: "4.9",
+    reviews: 140,
+    time: "Instant",
+    desc: "Pure hibiscus leaves brewed with crushed fresh ginger, cloves, citrus zest, and pineapple nectar. Served chilled."
+  },
+  {
+    id: "grilled-chicken",
+    name: "Peppered Flame Grilled Chicken",
+    category: "sides",
+    price: 2000,
+    img: "SATED & SALTED.png",
+    badge: "Protein Add-on 🍗",
+    spice: "Hot Pepper",
+    rating: "5.0",
+    reviews: 175,
+    time: "10-15 mins",
+    desc: "Succulent, herb-marinated chicken drumstick flame-grilled and glazed with our signature spicy pepper relish."
+  }
+];

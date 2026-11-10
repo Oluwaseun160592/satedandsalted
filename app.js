@@ -7,112 +7,15 @@
 const VENDOR_WHATSAPP_NUMBER = "2348164475960"; 
 
 // Menu Items Database
-const MENU_ITEMS = [
-  {
-    id: "jollof-spagh",
-    name: "Smoky Party Jollof Spaghetti",
-    category: "spaghetti",
-    price: 3500,
-    img: "jollofspagh.jpg",
-    badge: "Chef's Pick 🔥",
-    spice: "Spicy",
-    rating: "4.9",
-    reviews: 184,
-    time: "25-35 mins",
-    desc: "Rich tomato-pepper base simmered with aromatic herbs, smoked spices, and slow-braised to party perfection."
-  },
-  {
-    id: "stirfry-spagh",
-    name: "Sizzling Stir-fry Spaghetti",
-    category: "spaghetti",
-    price: 4000,
-    img: "stirfryspagh.jpg",
-    badge: "Bestseller 🔥",
-    spice: "Medium Spice",
-    rating: "5.0",
-    reviews: 212,
-    time: "20-30 mins",
-    desc: "Wok-tossed spaghetti loaded with sweet bell peppers, sweetcorn, shredded chicken, and savory Asian-Nigerian spices."
-  },
-  {
-    id: "gizdodo",
-    name: "Signature Spicy Gizdodo",
-    category: "sides",
-    price: 3800,
-    img: "gizdodo.jpg",
-    badge: "Crowd Favorite 🌶️",
-    spice: "Fiery Hot",
-    rating: "5.0",
-    reviews: 305,
-    time: "15-25 mins",
-    desc: "Crispy fried sweet plantains and tender gizzard chunks drenched in rich caramelized habanero and pepper stew."
-  },
-  {
-    id: "yamarita",
-    name: "Special Yamarita Delight",
-    category: "fries",
-    price: 2800,
-    img: "fried yam.jpg",
-    badge: "Crispy Gold ✨",
-    spice: "Mild Dip",
-    rating: "4.8",
-    reviews: 95,
-    time: "20-25 mins",
-    desc: "Thick African yam wedges dipped in seasoned whisked egg batter, fried golden crisp, and served with spicy tomato relish."
-  },
-  {
-    id: "yam-fries",
-    name: "Classic Fried Yam Fries",
-    category: "fries",
-    price: 2200,
-    img: "Yam fries.jpg",
-    badge: "Street Classic",
-    spice: "Mild Dip",
-    rating: "4.8",
-    reviews: 110,
-    time: "15-20 mins",
-    desc: "Crisp exterior with a melt-in-your-mouth fluffy center, lightly salted and paired with our house fiery pepper sauce."
-  },
-  {
-    id: "potato-chips",
-    name: "Crispy Sweet Potato Chips",
-    category: "fries",
-    price: 2000,
-    img: "Sweet Potato chips.jpg",
-    badge: "Sweet & Crispy 🍠",
-    spice: "Mild Dip",
-    rating: "4.9",
-    reviews: 88,
-    time: "15-20 mins",
-    desc: "Thinly-sliced organic sweet potatoes fried till crunchy perfection, dusted with paprika sea salt, and served with dip."
-  },
-  {
-    id: "zobo-elixir",
-    name: "Chilled House Zobo Elixir",
-    category: "drinks",
-    price: 1200,
-    img: "SATED & SALTED.png",
-    badge: "Fresh Brew 🌺",
-    spice: "Refreshing",
-    rating: "4.9",
-    reviews: 140,
-    time: "Instant",
-    desc: "Pure hibiscus leaves brewed with crushed fresh ginger, cloves, citrus zest, and pineapple nectar. Served chilled."
-  },
-  {
-    id: "grilled-chicken",
-    name: "Peppered Flame Grilled Chicken",
-    category: "sides",
-    price: 2000,
-    img: "SATED & SALTED.png",
-    badge: "Protein Add-on 🍗",
-    spice: "Hot Pepper",
-    rating: "5.0",
-    reviews: 175,
-    time: "10-15 mins",
-    desc: "Succulent, herb-marinated chicken drumstick flame-grilled and glazed with our signature spicy pepper relish."
-  }
-];
+// Menu: the admin-edited menu (localStorage) overrides the defaults in menu-data.js
+function loadMenuItems() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("ss_menu"));
+    if (Array.isArray(saved)) return saved;
+  } catch (e) {}
+  return (window.SS_DEFAULT_MENU || []).map(i => ({ ...i }));
+}
+const MENU_ITEMS = loadMenuItems();
 
 // Delivery fee matrix by zone
 const DELIVERY_RATES = {
@@ -197,7 +100,7 @@ function updateKitchenStatus() {
 
 // Save Cart to localStorage
 function saveCart() {
-  localStorage.setItem("sated_salted_cart", JSON.stringify(cart));
+  try { localStorage.setItem("sated_salted_cart", JSON.stringify(cart)); } catch (e) { /* storage full: keep cart in memory */ }
   updateCartUI();
 }
 
@@ -458,6 +361,7 @@ function updateCartUI() {
 function renderMenu(itemsToRender = MENU_ITEMS) {
   const container = document.getElementById("menuGrid");
   if (!container) return;
+  itemsToRender = itemsToRender.filter(i => i.available !== false);
 
   if (itemsToRender.length === 0) {
     container.innerHTML = `
@@ -763,3 +667,129 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+/* ==========================================================================
+   Search dropdown (suggestions under the menu search box)
+   ========================================================================== */
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+}
+
+function highlightMatch(text, query) {
+  const safe = escapeHtml(text);
+  if (!query) return safe;
+  const q = escapeHtml(query).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return safe.replace(new RegExp("(" + q + ")", "ig"), "<mark>$1</mark>");
+}
+
+function setupSearchDropdown() {
+  const input = document.getElementById("menuSearchInput");
+  const dropdown = document.getElementById("searchDropdown");
+  if (!input || !dropdown) return;
+
+  const CATEGORY_LABELS = { spaghetti: "Spaghetti", fries: "Roots & Fries", sides: "Sides", drinks: "Drinks" };
+  let activeIndex = -1;
+  let currentResults = [];
+
+  function getResults(query) {
+    const q = query.toLowerCase().trim();
+    const available = MENU_ITEMS.filter(i => i.available !== false);
+    if (!q) return available.slice(0, 6);
+    return available.filter(i =>
+      i.name.toLowerCase().includes(q) ||
+      (i.desc || "").toLowerCase().includes(q) ||
+      (i.category || "").toLowerCase().includes(q) ||
+      (i.spice || "").toLowerCase().includes(q)
+    ).slice(0, 8);
+  }
+
+  function render() {
+    const query = input.value.trim();
+    currentResults = getResults(query);
+    activeIndex = -1;
+
+    if (currentResults.length === 0) {
+      dropdown.innerHTML = `<div class="search-empty"><i class="fas fa-face-frown"></i> No dishes match "${escapeHtml(query)}"</div>`;
+    } else {
+      const heading = query ? `${currentResults.length} result${currentResults.length > 1 ? "s" : ""}` : "Popular dishes";
+      dropdown.innerHTML = `<div class="search-dd-heading">${heading}</div>` + currentResults.map((item, idx) => `
+        <div class="search-dd-item" role="option" data-index="${idx}" data-id="${escapeHtml(item.id)}">
+          <img src="${escapeHtml(item.img)}" alt="">
+          <div class="search-dd-info">
+            <div class="search-dd-name">${highlightMatch(item.name, query)}</div>
+            <div class="search-dd-meta">${escapeHtml(CATEGORY_LABELS[item.category] || item.category || "")} &bull; ${formatNaira(item.price)}</div>
+          </div>
+          <button type="button" class="search-dd-add" data-add="${escapeHtml(item.id)}" title="Add to tray"><i class="fas fa-plus"></i></button>
+        </div>
+      `).join("");
+    }
+    open();
+  }
+
+  function open() { dropdown.classList.add("open"); input.setAttribute("aria-expanded", "true"); }
+  function close() { dropdown.classList.remove("open"); input.setAttribute("aria-expanded", "false"); activeIndex = -1; }
+
+  function highlightRow(idx) {
+    const rows = dropdown.querySelectorAll(".search-dd-item");
+    rows.forEach(r => r.classList.remove("active"));
+    if (idx >= 0 && rows[idx]) {
+      rows[idx].classList.add("active");
+      rows[idx].scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  function choose(itemId) {
+    const item = MENU_ITEMS.find(i => i.id === itemId);
+    if (!item) return;
+    input.value = item.name;
+    input.dispatchEvent(new Event("input", { bubbles: true })); // filters the grid below
+    close();
+    const grid = document.getElementById("menuGrid");
+    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  input.setAttribute("autocomplete", "off");
+  input.setAttribute("aria-expanded", "false");
+  input.addEventListener("focus", render);
+  input.addEventListener("input", render);
+
+  input.addEventListener("keydown", (e) => {
+    if (!dropdown.classList.contains("open")) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      activeIndex = (activeIndex + 1) % Math.max(currentResults.length, 1);
+      highlightRow(activeIndex);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      activeIndex = (activeIndex - 1 + currentResults.length) % Math.max(currentResults.length, 1);
+      highlightRow(activeIndex);
+    } else if (e.key === "Enter") {
+      if (activeIndex >= 0 && currentResults[activeIndex]) {
+        e.preventDefault();
+        choose(currentResults[activeIndex].id);
+      } else {
+        close();
+      }
+    } else if (e.key === "Escape") {
+      close();
+    }
+  });
+
+  dropdown.addEventListener("mousedown", (e) => e.preventDefault()); // keep input focused
+  dropdown.addEventListener("click", (e) => {
+    const addBtn = e.target.closest("[data-add]");
+    if (addBtn) {
+      addToCart(addBtn.getAttribute("data-add"));
+      return;
+    }
+    const row = e.target.closest(".search-dd-item");
+    if (row) choose(row.getAttribute("data-id"));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".menu-search-box")) close();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", setupSearchDropdown);
