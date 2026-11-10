@@ -25,8 +25,8 @@
   <!-- Top Announcement Bar -->
   <div class="top-bar">
     <span id="kitchenStatusIndicator" class="kitchen-status-pill"><span class="status-dot"></span> Kitchen Open & Cooking</span>
-    <span>📍 <strong>Kitchen:</strong> 78b, Green Street, Isolo Housing Estate, Lagos</span>
-    <span>🔥 Free Chilled Drink on orders above ₦15,000!</span>
+    <span id="topBarAddress">📍 <strong>Kitchen:</strong> 78b, Green Street, Isolo Housing Estate, Lagos</span>
+    <span id="topBarPromo">🔥 Free Chilled Drink on orders above ₦15,000!</span>
     <a href="#menu"><i class="fas fa-arrow-right"></i> Order Now</a>
   </div>
 
@@ -54,7 +54,7 @@
       <!-- Header Actions -->
       <div class="header-actions">
         <!-- Direct WhatsApp CTA -->
-        <a href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-header-whatsapp">
+        <a id="headerWhatsappBtn" href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-header-whatsapp">
           <i class="fab fa-whatsapp"></i>
           <span>Order on WhatsApp</span>
         </a>
@@ -65,6 +65,12 @@
           <span>Tray</span>
           <span class="cart-count-badge">0</span>
         </button>
+
+        <!-- Admin Portal Button -->
+        <a href="admin.html" class="btn-header-admin" title="Admin Portal - Edit Menu, Prices & Photos">
+          <i class="fas fa-user-shield"></i>
+          <span>Admin</span>
+        </a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
@@ -98,7 +104,7 @@
             <a href="#menu" class="btn-primary">
               <i class="fas fa-utensils"></i> Explore Our Menu
             </a>
-            <a href="https://wa.me/2348164475960?text=Hi!%20I%20want%20to%20order%20food%20from%20Sated%20%26%20Salted" target="_blank" class="btn-secondary">
+            <a id="heroWhatsappBtn" href="https://wa.me/2348164475960?text=Hi!%20I%20want%20to%20order%20food%20from%20Sated%20%26%20Salted" target="_blank" class="btn-secondary">
               <i class="fab fa-whatsapp"></i> Quick WhatsApp Order
             </a>
           </div>
@@ -135,24 +141,24 @@
         <div class="hero-visual">
           <div class="floating-pill floating-pill-1">
             <i class="fas fa-medal"></i>
-            <span>#1 Gizdodo in Town</span>
+            <span id="heroPill1Text">#1 Gizdodo in Town</span>
           </div>
 
           <div class="hero-dish-card">
             <div class="hero-dish-img-wrap">
-              <img src="gizdodo.jpg" alt="Signature Spicy Gizdodo">
-              <span class="hero-dish-badge">🔥 Chef's Signature</span>
+              <img id="heroDishImg" src="gizdodo.jpg" alt="Signature Spicy Gizdodo">
+              <span id="heroDishBadge" class="hero-dish-badge">🔥 Chef's Signature</span>
             </div>
             <div class="hero-dish-info">
               <div>
-                <h3>Signature Gizdodo</h3>
-                <p>Plantain & Gizzard in Fiery Pepper Sauce</p>
+                <h3 id="heroDishTitle">Signature Gizdodo</h3>
+                <p id="heroDishDesc">Plantain & Gizzard in Fiery Pepper Sauce</p>
               </div>
               <div class="hero-dish-price-group">
-                <div class="hero-dish-price">₦3,800</div>
+                <div id="heroDishPrice" class="hero-dish-price">₦3,800</div>
               </div>
             </div>
-            <button class="btn-primary" style="width: 100%; margin-top: 12px; padding: 10px;" onclick="addToCart('gizdodo')">
+            <button id="heroDishAddBtn" class="btn-primary" style="width: 100%; margin-top: 12px; padding: 10px;" onclick="addToCart('gizdodo')">
               <i class="fas fa-plus"></i> Add to My Tray
             </button>
           </div>
@@ -167,7 +173,7 @@
   </section>
 
   <!-- Scrolling banner -->
-  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Jollof Spaghetti &#9733;</span><span>Stir-fry Spaghetti &#9733;</span><span>Yamarita &#9733;</span><span>Gizdodo &#9733;</span><span>Sweet Potato Chips &#9733;</span><span>Zobo &#9733;</span><span>Delicacy at its Best &#9733;</span><span>Jollof Spaghetti &#9733;</span><span>Stir-fry Spaghetti &#9733;</span><span>Yamarita &#9733;</span><span>Gizdodo &#9733;</span><span>Sweet Potato Chips &#9733;</span><span>Zobo &#9733;</span><span>Delicacy at its Best &#9733;</span></div></div>
+  <div class="marquee" aria-hidden="true"><div id="marqueeTrack" class="marquee-track"><span>Jollof Spaghetti &#9733;</span><span>Stir-fry Spaghetti &#9733;</span><span>Yamarita &#9733;</span><span>Gizdodo &#9733;</span><span>Sweet Potato Chips &#9733;</span><span>Zobo &#9733;</span><span>Delicacy at its Best &#9733;</span><span>Jollof Spaghetti &#9733;</span><span>Stir-fry Spaghetti &#9733;</span><span>Yamarita &#9733;</span><span>Gizdodo &#9733;</span><span>Sweet Potato Chips &#9733;</span><span>Zobo &#9733;</span><span>Delicacy at its Best &#9733;</span></div></div>
 
   <!-- Features / Value Pillars Bar -->
   <section class="features-section">
@@ -250,7 +256,7 @@
         <p class="section-desc">Get the ultimate taste feast with our high-value combo boxes designed to save you money.</p>
       </div>
 
-      <div class="specials-grid">
+      <div class="specials-grid" id="specialsGrid">
         <!-- Combo 1 -->
         <div class="special-card">
           <span class="combo-ribbon">Save ₦1,000</span>
@@ -470,7 +476,7 @@
               <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
               <div class="contact-detail-text">
                 <h4>Kitchen Location</h4>
-                <p>78b, Green Street, Isolo Housing Estate, Lagos, Nigeria</p>
+                <p id="contactAddressText">78b, Green Street, Isolo Housing Estate, Lagos, Nigeria</p>
               </div>
             </div>
 
@@ -494,7 +500,7 @@
               <div class="contact-detail-icon"><i class="fab fa-whatsapp"></i></div>
               <div class="contact-detail-text">
                 <h4>WhatsApp Direct Orders</h4>
-                <p><a href="https://wa.me/2348164475960" target="_blank" style="color: var(--whatsapp); font-weight: 700;">+234 816 447 5960</a></p>
+                <p><a id="contactWhatsappLink" href="https://wa.me/2348164475960" target="_blank" style="color: var(--whatsapp); font-weight: 700;">+234 816 447 5960</a></p>
               </div>
             </div>
 
@@ -507,7 +513,7 @@
             </div>
           </div>
 
-          <a href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20want%20to%20order%20food." target="_blank" class="btn-primary" style="width: 100%; text-align: center;">
+          <a id="contactWhatsappBtn" href="https://wa.me/2348164475960?text=Hello%20Sated%20%26%20Salted!%20I%20want%20to%20order%20food." target="_blank" class="btn-primary" style="width: 100%; text-align: center;">
             <i class="fab fa-whatsapp"></i> Chat & Order on WhatsApp (+234 816 447 5960)
           </a>
         </div>
@@ -603,11 +609,11 @@
           <h4>Location & Orders</h4>
           <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px;">
             <i class="fas fa-location-dot" style="color: var(--primary);"></i> <strong>Address:</strong><br>
-            78b, Green Street, Isolo Housing Estate, Lagos
+            <span id="footerAddressText">78b, Green Street, Isolo Housing Estate, Lagos</span>
           </p>
           <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px;">
             <i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i> <strong>Order Line:</strong><br>
-            <a href="https://wa.me/2348164475960" target="_blank" style="color: var(--whatsapp); font-weight: 700;">+234 816 447 5960</a>
+            <a id="footerWhatsappLink" href="https://wa.me/2348164475960" target="_blank" style="color: var(--whatsapp); font-weight: 700;">+234 816 447 5960</a>
           </p>
           <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; margin-bottom: 10px;">
             <strong>Hours:</strong> Mon – Sat: 10:00 AM – 9:00 PM
@@ -619,7 +625,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Sated & Salted. All Rights Reserved. Handcrafted with passion. &middot; <a href="admin.html" style="opacity:.7;text-decoration:underline;">Admin</a></p>
+        <p>&copy; 2026 Sated & Salted. All Rights Reserved. Handcrafted with passion. &middot; <a href="admin.html" style="color:var(--accent);font-weight:700;text-decoration:underline;"><i class="fas fa-user-shield"></i> Admin Portal</a></p>
       </div>
     </div>
   </footer>
@@ -766,7 +772,7 @@
               <input type="radio" name="modalPortion" id="portionJumbo">
               <span class="portion-info">Jumbo Feast Bowl (Extra Portion)</span>
             </div>
-            <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">+₦1,500</span>
+            <span id="jumboPriceLabel" style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">+₦1,500</span>
           </label>
         </div>
 
@@ -775,7 +781,7 @@
           <span>Add-on Extras</span>
           <span style="font-size: 0.75rem; color: var(--text-dim);">Optional</span>
         </div>
-        <div class="addons-list">
+        <div class="addons-list" id="modalAddonsList">
           <label class="addon-label">
             <div style="display: flex; align-items: center; gap: 10px;">
               <input type="checkbox" class="modal-addon-checkbox" data-name="Extra Fried Dodo" data-price="800">
